@@ -30,7 +30,7 @@ def findcolor(l):
     return L
 
 
-st.title('图片加工')
+st.title('图片色块加工')
 st.markdown('建议图片尺寸在100-400之间')
 upload_file = st.file_uploader(
     label='上传图片'
@@ -83,34 +83,10 @@ if upload_file is not None:
                 else:    
                     cv.line(newimage1,(j*N,i*M),((j+1)*N,(i+1)*M),(B,G,R),int(1*max(M,N)))
         st.image(newimage1,channels="BGR")
+        st.header('色块位置(x1,x2,y1,y2)')
         st.write(drawplace)
+        st.header('色块BGR')
         st.write(drawcolor)
           
 else:
     st.stop()
-# st.markdown('Streamlit Demo')
-
-# # 设置网页标题
-# st.title('一个傻瓜式构建可视化 web的 Python 神器 -- streamlit')
-
-# # 展示一级标题
-# st.header('1. 安装')
-
-# st.text('和安装其他包一样，安装 streamlit 非常简单，一条命令即可')
-# code1 = '''pip3 install streamlit'''
-# st.code(code1, language='bash')
-
-
-# # 展示一级标题
-# st.header('2. 使用')
-
-# # 展示二级标题
-# st.subheader('2.1 生成 Markdown 文档')
-
-# # 纯文本
-# st.text('导入 streamlit 后，就可以直接使用 st.markdown() 初始化')
-
-# # 展示代码，有高亮效果
-# code2 = '''import streamlit as st
-# st.markdown('Streamlit Demo')'''
-# st.code(code2, language='python')
